@@ -1,0 +1,42 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Art-Gallery</title>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/elements.css' %}">
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navigation.css' %}">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sections.css' %}">
+    <link rel="stylesheet" href="{% static 'css/site.css' %}">
+    <link rel="stylesheet" href="{% static 'css/typography.css' %}">
+
+    {% block styles %}
+    {% endblock %}
+</head>
+<body>
+
+{% include 'mutual/header.html' %}
+
+<h1 class="text-center">
+    {% block site_title %}
+        Home page
+
+    {% endblock %}
+</h1>
+
+{% block content %}
+{% endblock %}
+
+{% include 'mutual/footer.html' %}
+</body>
+</html>

@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+html {
+    font: 14px/1.5 Merriweather, serif;
+    box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1024px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1600px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+body, form, input, table, textarea, button {
+    font: inherit;
+}
+
+p, ul, ol {
+    padding-bottom: 1.5em;
+}
+
+ul, ol {
+    padding-left: 2.5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding-bottom: 0.5em;
+    padding-top: 1.5rem;
+    font-weight: normal;
+    font-family: Fira Sans, sans-serif;
+}
+
+h1 {
+    font-size: 2.4em
+}
+
+h2 {
+    font-size: 2.0em
+}
+
+h3 {
+    font-size: 1.6em
+}
+
+h4 {
+    font-size: 1.4em
+}
+
+h5 {
+    font-size: 1.2em
+}
+
+h6 {
+    font-size: 1em
+}
+
+blockquote {
+    padding: 0 2.5em;
+    border-left: 2px solid black;
+    margin-bottom: 1.5em;
+    margin-left: 1.5em;
+}
+
+blockquote p {
+    font-style: italic;
+
+}
+
+blockquote p:last-child {
+    padding-bottom: 0;
+}
+
+blockquote p.author {
+    text-align: right;
+}

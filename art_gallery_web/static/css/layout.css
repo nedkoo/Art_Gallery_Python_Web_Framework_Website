@@ -1,0 +1,95 @@
+body {
+    background: #FFF;
+
+}
+.site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
+.wrapper {
+    max-width: 75rem;
+    margin: 0 auto;
+
+}
+
+.site-header {
+   padding-top: 2em;
+}
+
+.site-header .wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.site-branding .site-description {
+
+    text-transform: uppercase;
+    letter-spacing: -0.07em;
+    opacity: 0.6;
+}
+
+.site-header nav {
+   margin-left: auto;
+}
+
+.site-branding .site-title {
+    margin: 0;
+    padding: 0;
+    font-size: 3em;
+}
+
+.site-branding .site-title a {
+    color:purple;
+    text-decoration: none;
+}
+
+.site-footer {
+    padding-top: 2em;
+}
+
+.site-footer .wrapper {
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.site-footer a {
+    text-decoration: none;
+    color: #000;
+}
+
+.site-footer .widget {
+    flex-grow: 1;
+}
+
+.site-footer .widget:not(:last-child) {
+    padding-right: 35em;
+}
+
+@media (min-width: 900px) {
+    .site-footer .wrapper {
+        display: flex;
+    }
+
+
+    .widget-contacts {
+        flex-basis: 30%;
+    }
+
+}
+
+
+.widget-contacts ul {
+    margin: 0;
+    padding: 0;
+}
+
+.widget-contacts li {
+    display: block;
+    list-style: none outside;
+}

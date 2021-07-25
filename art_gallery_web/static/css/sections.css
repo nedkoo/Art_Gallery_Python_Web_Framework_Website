@@ -1,0 +1,100 @@
+@import url('https://use.fontawesome.com/releases/v5.10.2/css/all.css');
+.section {
+    padding-left: 2em;
+    padding-right: 2em;
+
+
+}
+
+.gallery{
+    background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5)),url("https://images.unsplash.com/photo-1604424362847-99efbd58acd4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1680&q=70");
+    background-position: center,center;
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+
+}
+
+.gallery a {
+    display: block;
+    padding: 20vh 5vw;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 2.4em
+}
+
+.gallery>a:hover {
+    text-decoration: underline;
+
+}
+
+.section header {
+    text-align: center;
+
+}
+
+.section header:after {
+    display: block;
+    content: "";
+    height: 4px;
+    width: 6em;
+    background: black;
+    margin: 1em auto 2em auto;
+}
+
+.section header a {
+    color: black;
+    text-decoration: none;
+}
+
+.section header h1,
+.section header h2,
+.section header h3 {
+    margin: 0;
+
+}
+
+.section.section-cta .wrapper {
+    padding: 2em;
+    display: flex;
+    align-items: center;
+
+}
+
+.section.section-cta header {
+    text-align: left;
+
+}
+
+.section.section-cta header:after {
+    display: none;
+}
+
+.section.section-newsletter header:after {
+    background: white;
+}
+
+.section.section-newsletter header,
+.section.section-newsletter header a {
+    color: white;
+}
+
+
+.section.section-newsletter {
+    background: purple;
+    padding: 2em;
+}
+
+.section.section-testimonials {
+    padding: 2em;
+    background: #ccc;
+}
+
+
+.icon i {
+    font-size: 10em;
+}
+
+.icon-content {
+    margin-right: 10em;
+}
