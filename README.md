@@ -1,4 +1,4 @@
-<!-- Art_Gallery_Python_Web_Framework_Website
+Art_Gallery_Python_Web_Framework_Website
 
 
 Open source website for viewing arts and paintings. This website is being built as my Python Web Framework project in Python Web Framework Module, Software Engineering, Software University.
@@ -39,4 +39,4 @@ License
 MIT
 
 
-© 2021 GitHub, Inc. -->
+© 2021 GitHub, Inc.
