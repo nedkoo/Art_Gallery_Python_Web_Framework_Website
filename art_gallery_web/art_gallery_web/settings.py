@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'art_gallery_web.gallery_auth',
-    'art_gallery_web.profiles',
+    'art_gallery_web.common',
     'art_gallery_web.gallery_app',
 ]
 

@@ -20,7 +20,7 @@ from django.urls import path, include
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
-                  path('', include('art_gallery_web.gallery_app.urls')),
+                  path('', include('art_gallery_web.common.urls')),
                   path('auth/', include('art_gallery_web.gallery_auth.urls')),
-                  path('profiles/', include('art_gallery_web.profiles.urls')),
+                  path('arts/', include('art_gallery_web.gallery_app.urls')),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
