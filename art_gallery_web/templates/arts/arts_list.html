@@ -1,0 +1,20 @@
+{% extends 'mutual/base.html' %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/site.css' %}">
+
+{% endblock %}
+
+{% block content %}
+    <section class="pictures">
+        <ul>
+            {% for art_entry in arts %}
+                <li>
+                    <a href="{% url 'details arts' art_entry.id %}"><img src="{{ art_entry.image.url}}"
+                                     alt="picture"></a>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </section>
+{% endblock %}

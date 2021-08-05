@@ -1,0 +1,29 @@
+{% extends 'mutual/base.html' %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/site.css' %}">
+
+{% endblock %}
+{% block site_title %}
+    <h1 class="text-center">Are you sure you want to delete {{ art.name }}?</h1>
+{% endblock %}
+{% block content %}
+
+    <div class="container-sm">
+
+        <div class="alert alert-dark" role="alert">
+
+            <form class="alert-link" method="post" action="{% url 'delete art' art.id %}">
+                {% csrf_token %}
+                <input type="submit" value="Confirm" class="btn btn-secondary"/>
+            </form>
+
+
+            <p></p>
+            <a class="btn btn-secondary" href="{% url 'list arts' %}"> Back </a>
+
+        </div>
+
+    </div>
+
+{% endblock %}

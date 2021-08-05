@@ -1,0 +1,31 @@
+{% extends 'mutual/base.html' %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/site.css' %}">
+
+{% endblock %}
+
+{% block content %}
+       <section class="picture-item">
+
+            <div class="photo"><img
+                    src="{{art.image.url}}"
+                    alt="picture">
+            </div>
+
+            <blockquote>
+                <p>{{ art.name }}</p>
+                <p>{{ art.description }}</p>
+                <h5>{{ art }}</h5>
+                <h3 class="'price">{{ art.price }} $</h3>
+                <a href="#" class="author">{{ art.created_by.username }}</a>
+            </blockquote>
+            <ul class="pictures-buttons">
+{#                {% if can_modify %}#}
+                <li><a class="button" href="{% url 'edit art' art.id %}">Edit</a></li>
+                <li><a class="button" href="{% url 'delete art' art.id %}">Delete</a></li>
+{#                {% endif %}#}
+            </ul>
+
+        </section>
+{% endblock %}

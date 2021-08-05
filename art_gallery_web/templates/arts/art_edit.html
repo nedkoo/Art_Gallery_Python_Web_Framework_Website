@@ -1,0 +1,23 @@
+{% extends 'mutual/base.html' %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/site.css' %}">
+
+{% endblock %}
+{% block site_title %}
+    <h6 class="text-center">Edit art:  {{ art.name }}</h6>
+{% endblock %}
+{% block content %}
+     <div class="row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    <form class="furniture-form" method="post" enctype="multipart/form-data" action="{% url "edit art" art.id %}" >
+                        {% csrf_token %}
+                        {{ form }}
+
+                        <input type="submit" value="Edit" class="btn btn-secondary">
+                    </form>
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
+{% endblock %}

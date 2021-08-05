@@ -98,3 +98,100 @@
 .icon-content {
     margin-right: 10em;
 }
+
+/*//pitures*/
+
+.pictures {
+    background: #EEEEEE;
+
+}
+
+
+.pictures ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+   padding: 60px 120px;
+
+}
+
+.pictures>ul li {
+
+    display: flex;
+    border: 2px solid darkgrey;
+    background: white;
+    padding: 15px;
+    list-style: none;
+    margin: 15px 0;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.pictures  img {
+    width: 20em;
+    height: auto;
+
+}
+
+blockquote {
+    padding: 0 2.5em;
+    border-left: 2px solid rgb(221,221,221);
+    margin-bottom: 1.5em;
+    font-style: italic;
+}
+blockquote p {
+    font-style: italic;
+
+}
+
+blockquote p:last-child {
+    padding-bottom: 0;
+}
+
+.author {
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    color:purple;
+    font-size: 1.5rem;
+}
+
+
+.picture-item{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.picture-item img {
+    width: 100%;
+    height: auto;
+
+}
+
+.picture-item .photo {
+    width: 45em;
+    margin: auto;
+    padding-bottom: 3em;
+
+}
+
+blockquote h3 {
+    color: purple;
+}
+
+.picture-item .pictures-buttons {
+    list-style: none;
+    padding: 0 2.5em;
+    display: flex;
+    margin: 0 0 0 1.5em;
+
+}
+
+.picture-item .pictures-buttons li {
+    list-style: none outside;
+    margin-right: 1.5em;
+}
+
