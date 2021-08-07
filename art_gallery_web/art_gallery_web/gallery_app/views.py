@@ -2,11 +2,10 @@ from django.contrib.auth.decorators import login_required
 
 from django.shortcuts import render, redirect
 
-# Create your views here.
 
-# from core.decorators import user_is_entry_author
 # from designs.forms import CreateDesignForm, PostForm
 from art_gallery_web.core.cleaned_up_files import cleaned_up_files
+from art_gallery_web.core.decorators import user_is_entry_author
 
 from art_gallery_web.gallery_app.forms import CreateArtForm
 from art_gallery_web.gallery_app.models import Arts
@@ -61,6 +60,9 @@ def create_art(request):
         return render(request, 'arts/art_create.html', context)
 
 
+
+@login_required
+@user_is_entry_author
 def delete_art(request, pk):
     art = Arts.objects.get(pk=pk)
     # to delete only owner
@@ -80,7 +82,8 @@ def delete_art(request, pk):
 
         return redirect('list arts')
 
-
+@login_required
+@user_is_entry_author
 def edit_art(request, pk):
     art = Arts.objects.get(pk=pk)
     if request.method == "GET":

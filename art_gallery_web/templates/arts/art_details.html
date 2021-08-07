@@ -16,15 +16,15 @@
             <blockquote>
                 <p>{{ art.name }}</p>
                 <p>{{ art.description }}</p>
-                <h5>{{ art }}</h5>
+                <h5>{{ art }}cm</h5>
                 <h3 class="'price">{{ art.price }} $</h3>
                 <a href="#" class="author">{{ art.created_by.username }}</a>
             </blockquote>
             <ul class="pictures-buttons">
-{#                {% if can_modify %}#}
+               {% if can_modify %}
                 <li><a class="button" href="{% url 'edit art' art.id %}">Edit</a></li>
                 <li><a class="button" href="{% url 'delete art' art.id %}">Delete</a></li>
-{#                {% endif %}#}
+               {% endif %}
             </ul>
 
         </section>

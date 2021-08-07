@@ -46,8 +46,15 @@
             <ul>
                 <li><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="{% url 'list arts' %}">Arts</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Blog</a></li>
+
+                {% if user.is_authenticated and user.is_active %}
+                    <li><a href="{% url 'create art' %}">Add Arts</a></li>
+                    <li><a href="{% url 'logout user' %}">Log out</a></li>
+                {% else %}
+                    <li><a href="{% url 'login user' %}">Log in</a></li>
+                    <li><a href="{% url 'register user' %}">Register</a></li>
+                {% endif %}
+
                 <li><a href="#">Contacts</a></li>
             </ul>
         </nav>
