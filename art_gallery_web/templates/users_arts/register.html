@@ -1,0 +1,22 @@
+{% extends 'mutual/base.html' %}
+{% load static %}
+{% block site_title %}
+    <h3 class="text-center">
+    Register
+    </h3>
+{% endblock %}
+
+{% block content %}
+    <div class="row align-items-center justify-content-center">
+
+                <form action="{% url 'register user' %}" method="post">
+
+                    {{ form }}
+
+                    {% csrf_token %}
+
+                    <button class="btn btn-secondary">Register</button>
+                    or <a href="{% url 'login user' %}">Log in</a>
+                </form>
+            </div>
+{% endblock %}

@@ -1,31 +1,55 @@
 {% extends 'mutual/base.html' %}
 {% load static %}
-{% block styles %}
-    <link rel="stylesheet" href="{% static 'css/site.css' %}">
-
-{% endblock %}
 
 {% block content %}
-       <section class="picture-item">
+    <section class="picture-item">
 
-            <div class="photo"><img
-                    src="{{art.image.url}}"
-                    alt="picture">
-            </div>
+        <div class="photo"><img
+                src="{{ art.image.url }}"
+                alt="picture">
+        </div>
 
-            <blockquote>
-                <p>{{ art.name }}</p>
-                <p>{{ art.description }}</p>
-                <h5>{{ art }}cm</h5>
-                <h3 class="'price">{{ art.price }} $</h3>
-                <a href="#" class="author">{{ art.created_by.username }}</a>
-            </blockquote>
-            <ul class="pictures-buttons">
-               {% if can_modify %}
+        <blockquote>
+            <p>{{ art.name }}</p>
+            <p>{{ art.description }}</p>
+            <h5>{{ art }}cm</h5>
+            <h3 class="'price">{{ art.price }} $</h3>
+            <a href="{% url 'user_profile' art.created_by_id %}" class="author">{{ art.created_by.username }}</a>
+        </blockquote>
+        <ul class="pictures-buttons">
+            {% if can_modify %}
                 <li><a class="button" href="{% url 'edit art' art.id %}">Edit</a></li>
                 <li><a class="button" href="{% url 'delete art' art.id %}">Delete</a></li>
-               {% endif %}
-            </ul>
+            {% endif %}
+            <li><a class="button" href="{% url 'comment art' art.id %}">Comment</a></li>
+        </ul>
+        <hr>
 
-        </section>
+        <div class="comments">
+            {% if art.post_set.count > 0 %}
+
+                <h4 >{{ post.post_set.count }}Comments </h4>
+
+
+                {% for post_art in art.post_set.all %}
+
+                    <div>
+                        <p class="comments-date">{{ post_art.created_on }}</p>
+                        <hr>
+                        <p>{{ post_art.text }}</p>
+                        <hr>
+                        <p class="comments-name">{{ post_art.name }}</p>
+                    </div>
+
+                {% endfor %}
+
+            {% else %}
+
+                <h4>There are no comments</h4>
+                <hr>
+
+            {% endif %}
+        </div>
+
+    </section>
 {% endblock %}

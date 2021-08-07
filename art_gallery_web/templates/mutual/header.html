@@ -1,37 +1,5 @@
 {% load static %}
 
-
-{#<nav>#}
-{#    <ul class="this-header">#}
-{#        <li class="this-li logo"><img src="{% static 'images/logo.png' %}" alt="logo" class="image-logo"/></li>#}
-{#        <li class="this-li "><a class="{% if current_page == 'home' %}active{% endif %}"#}
-{#                                href="{% url 'index' %}">Home</a>#}
-{#        </li>#}
-{##}
-{#        <li class="this-li"><a class="{% if current_page == 'list_designs' %}active{% endif %}"#}
-{#                               href="{% url 'list designs' %}">All#}
-{#            designs</a>#}
-{#        </li>#}
-{#        {% if user.is_authenticated and user.is_active %}#}
-{#            <li class="this-li"><a class="{% if current_page == 'create_designs' %}active{% endif %}"#}
-{#                                   href="{% url 'create design' %}">Add design</a>#}
-{#            </li>#}
-{#            <li class="this-li"><a class="{% if current_page == 'my_designs' %}active{% endif %}"#}
-{#                                   href="{% url 'my_profile' %}">{{ user.username }}</a>#}
-{#            </li>#}
-{#            <li class="this-li about"><a href="{% url 'logout user' %}">Log out</a>#}
-{#            </li>#}
-{#        {% else %}#}
-{#            <li class="this-li"><a href="{% url 'login user' %}">Log in</a>#}
-{#            </li>#}
-{##}
-{#        {% endif %}#}
-{##}
-{##}
-{#        <li class="this-li about"><a class="{% if current_page == 'about' %}active{% endif %}"#}
-{#                                     href="{% url 'about page' %}">About</a></li>#}
-{#    </ul>#}
-{#</nav>#}
 <header class="site-header">
     <div class="wrapper">
         <div class="site-branding">
@@ -49,13 +17,14 @@
 
                 {% if user.is_authenticated and user.is_active %}
                     <li><a href="{% url 'create art' %}">Add Arts</a></li>
+                    <li><a href="{% url 'my_profile' %}">{{ user.username }}</a></li>
                     <li><a href="{% url 'logout user' %}">Log out</a></li>
                 {% else %}
                     <li><a href="{% url 'login user' %}">Log in</a></li>
                     <li><a href="{% url 'register user' %}">Register</a></li>
                 {% endif %}
 
-                <li><a href="#">Contacts</a></li>
+                <li><a href="{% url 'about page' %}">About</a></li>
             </ul>
         </nav>
 

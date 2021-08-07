@@ -3,11 +3,10 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 
-# from designs.forms import CreateDesignForm, PostForm
 from art_gallery_web.core.cleaned_up_files import cleaned_up_files
 from art_gallery_web.core.decorators import user_is_entry_author
 
-from art_gallery_web.gallery_app.forms import CreateArtForm
+from art_gallery_web.gallery_app.forms import CreateArtForm, PostForm
 from art_gallery_web.gallery_app.models import Arts
 
 
@@ -35,6 +34,7 @@ def details_arts(request, pk):
         return render(request, 'arts/art_details.html', context)
 
 
+@login_required
 def create_art(request):
     if request.method == "GET":
         form = CreateArtForm()
@@ -60,7 +60,6 @@ def create_art(request):
         return render(request, 'arts/art_create.html', context)
 
 
-
 @login_required
 @user_is_entry_author
 def delete_art(request, pk):
@@ -81,6 +80,7 @@ def delete_art(request, pk):
         cleaned_up_files(art.image.path)
 
         return redirect('list arts')
+
 
 @login_required
 @user_is_entry_author
@@ -110,3 +110,32 @@ def edit_art(request, pk):
             'form': form
         }
         return render(request, 'arts/art_edit.html', context)
+
+
+def create_post(request, pk):
+    art = Arts.objects.get(pk=pk)
+    if request.method == "GET":
+        form = PostForm()
+
+        context = {
+
+            'form': form,
+            'art': art
+
+        }
+        return render(request, 'posts/create_post.html', context)
+    else:
+        form = PostForm(data=request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.art = art
+            post.save()
+
+            return redirect('details arts', pk)
+        context = {
+
+            'form': form,
+            'art': art,
+
+        }
+        return render(request, 'posts/create_post.html', context)

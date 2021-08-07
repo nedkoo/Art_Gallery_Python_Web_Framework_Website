@@ -30,7 +30,7 @@ main {
 .site-branding .site-description {
 
     text-transform: uppercase;
-    letter-spacing: -0.07em;
+    letter-spacing: 0.07em;
     opacity: 0.6;
 }
 

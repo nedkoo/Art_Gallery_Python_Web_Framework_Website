@@ -2,8 +2,9 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.db import models
 
+from art_gallery_web.gallery_auth.models import UserProfile
 
-# Custom Validator
+
 def is_negative(value):
     if value <= 0:
         raise ValidationError('The value must be positive')
@@ -37,3 +38,4 @@ class Post(models.Model):
 
     def __str__(self):
         return f'Comment {self.text} by {self.name}'
+

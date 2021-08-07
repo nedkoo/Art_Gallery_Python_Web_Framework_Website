@@ -99,7 +99,7 @@
     margin-right: 10em;
 }
 
-/*//pitures*/
+/*//pictures*/
 
 .pictures {
     background: #EEEEEE;
@@ -195,3 +195,59 @@ blockquote h3 {
     margin-right: 1.5em;
 }
 
+/*Comments*/
+.comments {
+    padding: 0 3em;
+    margin: 2em 0 1.5em 0;
+}
+
+.comments h4 {
+    color: purple;
+    margin-bottom: 2em;
+    border-bottom: 2px solid rgb(221,221,221);
+}
+
+
+.comments div {
+    border: 2px solid rgb(221,221,221);
+    padding: 1.5em;
+    border-radius: 0.5em;
+    background: #EEEEEE;
+    margin-bottom: 2.5rem;
+}
+
+.comments p {
+    padding: 0;
+}
+
+.comments-name {
+
+    font-size: 0.8rem;
+    margin-left: auto;
+    font-style: italic;
+    display: inline-block;
+}
+
+.comments-date {
+    font-size: 0.8rem;
+
+    font-style: italic
+}
+
+/*About*/
+
+.about {
+    max-width: 65%;
+    margin: auto;
+
+}
+
+.about h2 {
+    text-align: center;
+    color: purple;
+}
+
+/*portfolio*/
+.gallery-portfolio {
+    margin-right: 0.5em;
+}

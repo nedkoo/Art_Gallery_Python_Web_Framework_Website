@@ -1,0 +1,92 @@
+{% extends 'mutual/base.html' %}
+{% load static %}
+{% block js %}
+<script type="text/javascript" src="{% static 'js/test.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="text-center"></div>
+                {% if object.profile_picture %}
+                    <img src="{{ object.profile_picture.url }}" alt="Image" width="250" height="250">
+                {% else %}
+                    <img src="https://afribary.com/authors/anonymous-user/photo" alt="Image" width="250"
+                         height="250">
+                {% endif %}
+                <h2>{{ art_user.username }}</h2>
+
+
+                {% if object.facebook %}
+                    <a class="btn btn-info btn-xs" href="{{ object.facebook }}" role="button">Facebook</a>
+                {% else %}
+                    <a class="btn btn-info btn-xs" href="#" role="button">Facebook</a>
+                {% endif %}
+
+                {% if object.twitter %}
+                    <a class="btn btn-info btn-xs" href="{{ object.twitter }}" role="button">Twitter</a>
+                {% else %}
+                    <a class="btn btn-info btn-xs" href="#" role="button">Twitter</a>
+                {% endif %}
+
+                {% if object.instagram %}
+                    <a class="btn btn-info btn-xs" href="{{ object.instagram }}" role="button">Instagram</a>
+                {% else %}
+                    <a class="btn btn-info btn-xs" href="#" role="button">Instagram</a>
+                {% endif %}
+                <a class="btn btn-info btn-xs" href="mailto:{{ art_user.email }}">Email</a>
+
+                {% if can_upload %}
+                    <div class="w-50 s-auto">
+                        <br>
+                        <button id="btn-profile" class="btn btn-secondary" onclick="myFunction()">Add Your
+                            Portfolio
+                        </button>
+                        <br>
+                        <hr>
+
+                        <form style="display:none" id='my-profile' action="{% url 'my_profile' %} " method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form }}
+                            <br>
+                            <button class="btn btn-secondary">Upload</button>
+                        </form>
+
+                    </div>
+                {% endif %}
+
+            </div>
+            <div class="col-md-8">
+                <p class="lead">{{ object.portfolio }}</p>
+                <hr/>
+
+                {% if not arts %}
+                    <p>No Arts</p>
+                    <hr/>
+                    <a class="btn btn-secondary btn-xs" href="{% url 'create art' %}" role="button">To Add Your
+                        Portfolio You Need to Upload Art</a>
+                {% else %}
+
+                    <h2 class='text-center'>Arts</h2>
+                    <hr/>
+                    <div class="d-flex p-3">
+
+                        {% for art_entry in arts %}
+
+                            <a class="gallery-portfolio" href="{% url 'details arts' art_entry.id %}"><img
+                                    src="{{ art_entry.image.url }} "
+                                    alt="picture" width="300"
+                                    height=auto></a>
+
+                        {% endfor %}
+
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

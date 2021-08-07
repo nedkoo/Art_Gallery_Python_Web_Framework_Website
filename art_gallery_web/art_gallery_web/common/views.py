@@ -9,8 +9,8 @@ def main_page(request):
     return render(request, 'index.html', context)
 
 
-# def about_page(request):
-#     context = {
-#         'current_page': 'about'
-#     }
-#     return render(request, 'contact.html', context)
+def about_page(request):
+    context = {
+        'current_page': 'about'
+    }
+    return render(request, 'about.html', context)

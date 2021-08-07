@@ -1,12 +1,7 @@
 {% extends 'mutual/base.html' %}
 {% load static %}
-{% block styles %}
-    <link rel="stylesheet" href="{% static 'css/site.css' %}">
-
-{% endblock %}
-
 {% block content %}
-      <section class="gallery">-->
-           <a href="{% url 'list arts' %}">Gallery Story</a>
-           </section>
+    <section class="gallery">
+        <a href="{% url 'list arts' %}">Gallery Story</a>
+    </section>
 {% endblock %}
