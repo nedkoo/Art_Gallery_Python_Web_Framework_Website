@@ -15,9 +15,11 @@
                 <li><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="{% url 'list arts' %}">Arts</a></li>
 
-                {% if user.is_authenticated and user.is_active %}
+                {% if  user.is_authenticated and user.is_active %}
                     <li><a href="{% url 'create art' %}">Add Arts</a></li>
-                    <li><a href="{% url 'my_profile' %}">{{ user.username }}</a></li>
+                    {% if not user.is_superuser  %}
+                        <li><a href="{% url 'my_profile' %}">{{ user.username }}</a></li>
+                    {% endif %}
                     <li><a href="{% url 'logout user' %}">Log out</a></li>
                 {% else %}
                     <li><a href="{% url 'login user' %}">Log in</a></li>

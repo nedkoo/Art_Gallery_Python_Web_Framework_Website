@@ -32,3 +32,10 @@
 .site-nav a:focus {
     text-decoration: underline;
 }
+
+
+@media (max-width: 600px) {
+    .site-nav ul{
+       flex-direction: column;
+    }
+}
